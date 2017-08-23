@@ -19,5 +19,5 @@ var o = {
 alert(Object.get(o, 'foo.bar.baz.0.doge')); // This would output "wow"
 ```
 
-JSFiddle: https://jsfiddle.net/juliusplaras/xw3o7xcx/
+JSFiddle: https://jsfiddle.net/juliusplaras/u6gadxva/
 
