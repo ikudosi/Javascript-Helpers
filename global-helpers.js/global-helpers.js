@@ -12,3 +12,19 @@ if (typeof Object.get === 'undefined') {
         return recursive(mainObj, key.split('.'));
     }
 }
+
+if (typeof Array.prototype.contains === 'undefined') {
+    Object.defineProperty(Array.prototype, 'contains', {
+        enumerable: false,
+        value: function value(needle) {
+            var strictMode = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+
+            if (strictMode) {
+                return this.includes(needle);
+            }
+            return this.filter(function (item) {
+                return item == needle;
+            }).length > 0;
+        }
+    });
+}
